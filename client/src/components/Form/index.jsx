@@ -15,9 +15,13 @@ function Form () {
     let data = new FormData()
     data.append('file', file)
     data.append('name', 'file')
-
-    console.log(data)
-    API.upload(data)
+    const config = {
+      headers: {
+        'content-type': 'multipart/form-data'
+      }
+    }
+    console.log(data, config)
+    API.upload(data, config)
   }
   return (
     <div>

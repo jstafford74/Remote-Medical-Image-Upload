@@ -3,7 +3,8 @@ import axios from "axios";
 
 export default {
 
-    upload: function (param) {
-        return axios.post("/remotemedical/images", param).then(res => res.data);
+    upload: function (data, config) {
+        return axios.post("/rmt/images", data, config).then((res) => res.data
+        ).catch((error) => { console.log(error) });
     }
-};
+}
